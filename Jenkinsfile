@@ -1,6 +1,6 @@
 pipeline {
     parameters{
-        booleanParam(name: 'autoApprove',dafaultvalue: false,description: 'Automatically run after apply generating plan?')
+        booleanParam(name: 'autoApprove',defaultvalue: false,description: 'Automatically run after apply generating plan?')
   }
     environment{
          AWS_SECRET_KEY_ID = credentials('AWS_SECRET_KEY_ID')
