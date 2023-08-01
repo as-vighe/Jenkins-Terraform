@@ -1,6 +1,10 @@
 pipeline {
-    environment{
-         AWS_SECRET_KEY_ID = credentials('Sample_Param')
+     
+    parameters {
+          booleanParam(name: 'autoApprove',defaultValue: false,description: 'Automatically run after apply generating plan?')
+   }
+    environment {
+         AWS_SECRET_KEY_ID     = credentials('AWS_SECRET_KEY_ID')
          AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
    }
     agent any
