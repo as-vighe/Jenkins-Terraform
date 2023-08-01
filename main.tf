@@ -96,7 +96,7 @@ resource "aws_security_group" "demo_sg" {
 
 #Create Ec2 Instance
 resource "aws_instance" "demo" {
-  count = 3
+  #count = 3
   #ami           = "ami-0f34c5ae932e6f0e4"
   ami           = "ami-0533f2ba8a1995cf9"
   instance_type = "t2.micro"
@@ -116,8 +116,8 @@ resource "aws_instance" "demo" {
   EOF
 
   tags = {
-    Name = "demo_instance-${count.index}"
-    #Name = "demo_instance"
+    #Name = "demo_instance-${count.index}"
+    Name = "demo_instance"
 
   }
 }
