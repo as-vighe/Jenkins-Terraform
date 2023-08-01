@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', credentialsId: '<CREDS>', url: 'https://github.com/as-vighe/Jenkins-Terraform'
+                git 'https://github.com/as-vighe/Jenkins-Terraform'
             }
         }
         stage('Terraform init') {
