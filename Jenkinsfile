@@ -1,8 +1,4 @@
 pipeline {   
-    environment {
-         AWS_SECRET_KEY_ID     = credentials('aws_user')
-         AWS_SECRET_ACCESS_KEY = credentials('aws_user')
-   }
     agent any
     stages {
         stage('test AWS credentials') {
