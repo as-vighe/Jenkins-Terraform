@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('test AWS credentials') {
             steps {
-                withAWS(credentials: 'AWS_ACCESS_KEY_ID', region: 'us-east-1'){
+                withAWS(credentials: 'aws_credentials', region: 'us-east-1'){
                     sh 'aws iam get-user'
                 }
             }
