@@ -1,9 +1,13 @@
 pipeline {   
     agent any
+    environment {
+         AWS_SECRET_KEY_ID     = credentials('AWS_SECRET_KEY_ID')
+         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+     }
     stages {
         stage('test AWS credentials') {
             steps {
-                withAWS(credentials: 'aws_credentials', region: 'us-east-1'){
+                withAWS(credentials: 'AWS_SECRET_KEY_ID', region: 'us-east-1'){
                     sh 'aws iam get-user'
                 }
             }
